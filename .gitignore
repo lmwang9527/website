@@ -2,3 +2,5 @@ public/
 .idea/
 .Rproj.user
 resources
+.Rhistory
+public
