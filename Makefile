@@ -16,7 +16,10 @@ publish: build
 	git push
 
 update:
-	Rscript -e "blogdown::install_hugo()" && \
+	R -e "blogdown::install_hugo()" && \
+	#git remote add upstream https://github.com/sourcethemes/academic-kickstart.git &&
+	git fetch upstream && \
+	git merge upstream/master && \
 	git submodule update --remote --merge
 
 unbind:
