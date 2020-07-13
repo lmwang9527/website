@@ -15,6 +15,10 @@ publish: build
 	git commit -a -m"Updated personal webiste" && \
 	git push
 
+update:
+	Rscript -e "blogdown::install_hugo()" && \
+	git submodule update --remote --merge
+
 unbind:
 	lsof -wni tcp:4000
 
