@@ -1,0 +1,50 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+
+name:
+  display: Liming Wang
+  given: Liming
+  family: Wang
+  alternate: 王利明
+  pronunciation: ''
+  pronouns: ''
+postnominals: []
+status:
+  icon: ''
+role: Associate Professor of Urban Studies and Planning
+bio: Dr. Wang is an Associate Professor of Urban Studies and Planning and affiliated professor of Civil Engineering at Portland State University.
+
+affiliations:
+  - name: Portland State University
+    url: https://www.pdx.edu/
+
+links:
+  - icon: at-symbol
+    url: mailto:lmwang+web@gmail.com
+    label: E-mail Me
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=jgcEZPgAAAAJ&hl=en
+  - icon: brands/github
+    url: https://github.com/lmwang9527
+
+interests:
+  - Land Use Transportation Interaction Models
+  - Urban Modeling and Simulation
+  - Data Science
+
+education:
+  - degree: PhD Urban Design and Planning
+    institution: University of Washington, Seattle
+    end: 2009-06-01
+  - degree: MS Landscape Ecology
+    institution: Chinese Academy of Forestry, Beijing, China
+    end: 2002-06-01
+  - degree: BSc Geography
+    institution: Peking University, Beijing, China
+    end: 1999-06-01
+
+experience: []
+skills: []
+languages: []
+awards: []
