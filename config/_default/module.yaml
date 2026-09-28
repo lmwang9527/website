@@ -2,6 +2,8 @@
 ## HUGO MODULES
 ## Install or uninstall themes and plugins here.
 ## Docs: https://gohugo.io/hugo-modules/
+## The resolved modules are vendored in _vendor/ so Vercel's Hugo builder does
+## not need a Go toolchain at build time.
 ############################
 
 imports:
