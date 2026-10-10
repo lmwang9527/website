@@ -7,7 +7,6 @@ event_name: The 57th ACSP Annual Conference
 event_url: 'http://www.acsp.org/default.asp?page=ConfACSP'
 location: Denver, CO
 event_start: '2017-10-13T10:15:00Z'
-event_end: '2017-10-13T11:15:00Z'
 authors:
   - me
 featured: true
@@ -19,3 +18,9 @@ links:
     name: Slides
     url: 'https://hotdeck.github.io/acsp2017'
 ---
+
+## Presentation
+
+This presentation was delivered at the 57th ACSP Annual Conference in Denver, Colorado, on October 13, 2017. The original slide deck is embedded below; you can also [open the slides directly](https://hotdeck.github.io/acsp2017/) in a new tab.
+
+<iframe src="https://hotdeck.github.io/acsp2017/" title="Statistical Models vs Machine Learning slides" loading="lazy" width="100%" height="600" style="border: 1px solid #d1d5db; border-radius: 0.5rem;" allowfullscreen></iframe>

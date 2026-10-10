@@ -2,6 +2,7 @@
 title: "Creating Word Documents with R Markdown"
 summary: "References and tools for collaborating on Microsoft Word documents with R Markdown."
 date: '2020-08-14T00:00:00Z'
+draft: true
 aliases:
   - /post/2020-08-14-creating-word-doc/
 authors:
