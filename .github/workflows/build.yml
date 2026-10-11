@@ -125,17 +125,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-hugo-resources-
 
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5
-
     - name: Build with Hugo
       env:
         HUGO_ENVIRONMENT: production
         HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
       run: |
         echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-        hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        hugo --minify --baseURL "https://lmwang.info/"
 
     - name: Verify migrated site invariants
       env:
@@ -152,6 +148,8 @@ jobs:
 
     - name: Upload artifact
       id: upload
+      # deploy.yml consumes this standard Pages artifact with deploy-pages;
+      # upload-pages-artifact itself does not require configure-pages.
       uses: actions/upload-pages-artifact@v4
       with:
         path: ./public
