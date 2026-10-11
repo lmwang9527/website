@@ -1,0 +1,81 @@
+{{/*
+  Project-owned compatibility implementation for Hugo Blox's link builder.
+
+  Hugo 0.162 treats an empty `dict` as a nil map in Scratch.SetInMap. The
+  vendored Hugo Blox partial initializes such a map and then calls SetInMap,
+  which makes the site fail before CI can validate it. This implementation
+  keeps the current link contract while storing de-duplication keys in a
+  regular map, so it works on the pinned Hugo version and later releases.
+*/}}
+{{ $page := .page }}
+{{ $links := slice }}
+{{ $seen := dict }}
+{{ $types := hugo.Data.link_types.types }}
+
+{{ with $page.Params.links }}
+  {{ range . }}
+    {{ $type := .type | default "custom" }}
+    {{ $url := .url | default "" }}
+    {{ $key := printf "%s::%s" $type $url }}
+    {{ if not (index $seen $key) }}
+      {{ $seen = merge $seen (dict $key true) }}
+      {{ $icon := .icon | default "hero/link" }}
+      {{ $labelKey := "" }}
+      {{ with (index $types $type) }}
+        {{ $icon = .icon | default $icon }}
+        {{ $labelKey = .label_i18n | default "" }}
+      {{ end }}
+      {{ $links = $links | append (dict
+        "type" $type
+        "url" $url
+        "icon" $icon
+        "labelKey" $labelKey
+        "label" (.label | default .name)
+        "contexts" (.contexts | default (slice "list" "page"))
+        "rel" .rel
+      ) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Keep the common legacy URL fields functional during upgrades. */}}
+{{ $legacy := dict
+  "url_pdf" "pdf"
+  "url_preprint" "preprint"
+  "url_code" "code"
+  "url_dataset" "dataset"
+  "url_poster" "poster"
+  "url_project" "project"
+  "url_slides" "slides"
+  "url_source" "source"
+  "url_video" "video"
+}}
+{{ range $field, $type := $legacy }}
+  {{ with index $page.Params $field }}
+    {{ $url := . }}
+    {{ with ($page.Resources.GetMatch $url) }}{{ $url = .RelPermalink }}{{ else }}{{ $url = $url | relURL }}{{ end }}
+    {{ $key := printf "%s::%s" $type $url }}
+    {{ if not (index $seen $key) }}
+      {{ $seen = merge $seen (dict $key true) }}
+      {{ $typeDef := index $types $type }}
+      {{ $icon := "hero/link" }}
+      {{ $labelKey := "" }}
+      {{ with $typeDef }}{{ $icon = .icon | default $icon }}{{ $labelKey = .label_i18n | default "" }}{{ end }}
+      {{ $links = $links | append (dict "type" $type "url" $url "icon" $icon "labelKey" $labelKey "contexts" (slice "list" "page")) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ with $page.File.ContentBaseName }}
+  {{ with ($page.Resources.GetMatch (printf "%s.pdf" .)) }}
+    {{ $type := "pdf" }}
+    {{ $url := .RelPermalink }}
+    {{ $key := printf "%s::%s" $type $url }}
+    {{ if not (index $seen $key) }}
+      {{ $seen = merge $seen (dict $key true) }}
+      {{ $links = $links | append (dict "type" $type "url" $url "icon" "hero/document" "labelKey" "btn_pdf" "contexts" (slice "list" "page")) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $links }}
