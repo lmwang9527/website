@@ -28,9 +28,10 @@ deployment configuration.
 
 ## Upgrade procedure
 
-1. Change the pinned version in `hugoblox.yaml` only when deliberately testing
-   a Hugo release. Review Hugo and Hugo Blox release notes for config, module,
-   shortcode, and output changes.
+1. Keep `hugoblox.yaml`'s pinned `hugo_version` aligned with Vercel's
+   `HUGO_VERSION` setting and the local development version. Change the pinned
+   version only when deliberately testing a Hugo release. Review Hugo and Hugo
+   Blox release notes for config, module, shortcode, and output changes.
 2. Run `pnpm install` if the upgrade changes the frontend lockfile, then run
    `scripts/verify-site.sh` and `pnpm run build` locally.
 3. Inspect the rendered event, blog, and homepage listings and both talk pages.
