@@ -77,7 +77,7 @@ sections:
         folders:
           - events
     design:
-      view: card
+      view: date-title-summary
 
   - block: markdown
     id: contact
@@ -104,5 +104,5 @@ sections:
         folders:
           - blog
     design:
-      view: card
+      view: date-title-summary
 ---
