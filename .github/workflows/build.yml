@@ -134,6 +134,12 @@ jobs:
         echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
         hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
+    - name: Verify migrated site invariants
+      env:
+        HUGO_ENVIRONMENT: production
+        HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
+      run: ./scripts/verify-site.sh
+
     - name: Generate Pagefind search index (if applicable)
       run: |
         # Check if site uses Pagefind search
