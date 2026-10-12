@@ -10,6 +10,8 @@ authors:
   - me
 featured: true
 math: true
+abstract: |
+  This guest lecture contrasts community-oriented regional visioning with predictive land-use models, explains how land-use models support growth-management and transportation planning, and reviews the evolution and practical application of these models. It uses examples from the Puget Sound Regional Council and Metro in the Portland region to show how model forecasts connect policy scenarios, land-use change, and transportation-system analysis.
 links:
   - icon: presentation-chart-bar
     name: Slides

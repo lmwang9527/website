@@ -25,8 +25,10 @@ links:
     label: E-mail Me
   - icon: academicons/google-scholar
     url: https://scholar.google.com/citations?user=jgcEZPgAAAAJ&hl=en
+    label: Google Scholar
   - icon: brands/github
     url: https://github.com/lmwang9527
+    label: GitHub
 
 interests:
   - Land Use Transportation Interaction Models

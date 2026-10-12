@@ -1,4 +1,5 @@
 ---
+# Leave the homepage title empty to use the site title
 title: ''
 summary: ''
 type: landing
@@ -7,10 +8,11 @@ sections:
   - block: resume-biography-3
     content:
       username: me
+      text: ''
       headings:
         about: Biography
         education: Education
-        interests: Research interests
+        interests: Research Interests
     design:
       background:
         gradient_mesh:
@@ -24,7 +26,8 @@ sections:
   - block: markdown
     id: research
     content:
-      title: Research
+      title: '📚 Research'
+      subtitle: ''
       text: |-
         Dr. Wang’s research takes a data-driven approach to address challenging issues in planning, in particular those intersecting land use and transportation. Relying on data analysis, simulation and visualization techniques, his research aims to inform policy makers and the public of the effects of infrastructure and policy choices on community outcomes such as accessibility, environment, and equity.
     design:
@@ -33,14 +36,25 @@ sections:
   - block: collection
     id: papers
     content:
-      title: Selected Publications
+      title: Featured Publications
       filters:
         folders:
           - publications
         featured_only: true
     design:
+      view: article-grid
+      columns: 2
+
+  - block: collection
+    content:
+      title: Recent Publications
+      text: ''
+      filters:
+        folders:
+          - publications
+        exclude_featured: false
+    design:
       view: citation
-      css_class: legacy-collection-section legacy-section-papers
 
   - block: markdown
     id: teaching
@@ -56,7 +70,6 @@ sections:
         - [USP654: Data Analysis II](https://usp654.github.io)
     design:
       columns: '1'
-      css_class: legacy-text-section legacy-section-teaching
 
   - block: markdown
     id: software
@@ -70,7 +83,6 @@ sections:
         - [UrbanSim](http://www.urbansim.com/)
     design:
       columns: '1'
-      css_class: legacy-text-section legacy-section-software
 
   - block: collection
     id: talks
@@ -80,21 +92,30 @@ sections:
         folders:
           - events
     design:
-      view: date-title-summary
-      css_class: legacy-collection-section legacy-section-talks
+      view: card
 
   - block: collection
     id: news
     content:
       title: Posts
+      subtitle: ''
+      text: ''
       page_type: blog
       count: 10
       filters:
-        folders:
-          - blog
+        author: ''
+        category: ''
+        tag: ''
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        publication_type: ''
+      offset: 0
+      order: desc
     design:
-      view: date-title-summary
-      css_class: legacy-collection-section legacy-section-news
+      view: card
+      spacing:
+        padding: [0, 0, 0, 0]
 
   - block: markdown
     id: contact
@@ -110,5 +131,4 @@ sections:
         [Schedule an appointment](https://calendly.com/lmwang)
     design:
       columns: '1'
-      css_class: legacy-text-section legacy-section-contact
 ---

@@ -3,4 +3,4 @@
 {{- if not (hasPrefix $src "https://hotdeck.github.io/") -}}
   {{- errorf "slides-embed only permits decks hosted at hotdeck.github.io (got %q)" $src -}}
 {{- end -}}
-<iframe src="{{ $src | safeURL }}" title="{{ $title }}" loading="lazy" width="100%" height="600" style="border: 1px solid #d1d5db; border-radius: 0.5rem;" allowfullscreen></iframe>
+<iframe src="{{ $src | safeURL }}" title="{{ $title }}" loading="lazy" width="100%" height="600" allowfullscreen></iframe>

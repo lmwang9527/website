@@ -1,25 +1,25 @@
 main:
-  - name: Home
+  - name: Bio
     url: /
     weight: 10
   - name: Research
     url: /#research
-    weight: 20
+    weight: 11
+  - name: Papers
+    url: /#papers
+    weight: 12
   - name: Teaching
     url: /#teaching
-    weight: 25
+    weight: 13
   - name: Software
     url: /#software
-    weight: 26
-  - name: Publications
-    url: /publications/
-    weight: 30
+    weight: 14
   - name: Talks
-    url: /events/
-    weight: 40
-  - name: Posts
-    url: /blog/
-    weight: 50
+    url: /#talks
+    weight: 15
+  - name: News
+    url: /#news
+    weight: 16
   - name: Contact
     url: /#contact
-    weight: 60
+    weight: 17

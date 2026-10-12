@@ -4,12 +4,9 @@ env:
   NODE_VERSION: '22'
 
 on:
-  # Validate the active production branch on every push.
-  push:
-    branches: ['master']
   # Standalone trigger for PR validation
   pull_request:
-    branches: ['master']
+    branches: ['main']
   # Reusable workflow trigger - called by deploy.yml
   workflow_call:
     outputs:
@@ -125,19 +122,17 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-hugo-resources-
 
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5
+
     - name: Build with Hugo
       env:
         HUGO_ENVIRONMENT: production
         HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
       run: |
         echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-        hugo --minify --baseURL "https://lmwang.info/"
-
-    - name: Verify migrated site invariants
-      env:
-        HUGO_ENVIRONMENT: production
-        HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
-      run: ./scripts/verify-site.sh
+        hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
     - name: Generate Pagefind search index (if applicable)
       run: |
@@ -148,8 +143,6 @@ jobs:
 
     - name: Upload artifact
       id: upload
-      # deploy.yml consumes this standard Pages artifact with deploy-pages;
-      # upload-pages-artifact itself does not require configure-pages.
       uses: actions/upload-pages-artifact@v4
       with:
         path: ./public

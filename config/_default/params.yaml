@@ -24,22 +24,21 @@ hugoblox:
     description: "Liming Wang is an Associate Professor of Urban Studies and Planning at Portland State University. His research uses data-driven methods to study land use, transportation, urban modeling, and equity."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: ""
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
   # Color and visual design system
   # ────────────────────────────────────────────────────────────────────────────
   theme:
-    # Academic v4 opened in the light palette; retain the optional day/night
-    # switch without allowing the OS preference to change the default layout.
-    mode: light
+    # Mode: 'light', 'dark', or 'system' (follows OS preference)
+    mode: system
     # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
     pack: "default"
     # Optional: Override theme pack colors
     colors:
-      primary: "#2962ff" # Academic v4 primary/link blue
-      secondary: "#6c757d"
+      primary: "" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
+      secondary: ""
       neutral: "" # Affects gray utilities (text-gray-*, bg-gray-*)
     # Optional: Mode-specific color overrides
     colors_light: {}
@@ -61,8 +60,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   typography:
     # Theme pack: name from data/fonts/
-    # Academic v4 used Montserrat for headings and Roboto for body/navigation.
-    pack: "legacy-academic"
+    pack: "academic"
 
   # ────────────────────────────────────────────────────────────────────────────
   # LAYOUT
@@ -72,7 +70,7 @@ hugoblox:
     # Border radius: 'none', 'sm', 'md', 'lg', or 'full'
     radius: "md"
     # Spacing density: 'compact', 'comfortable', or 'spacious'
-    spacing: "comfortable"
+    spacing: "spacious"
     # Avatar shape in author profiles
     avatar_shape: circle # circle | square | rounded
 
@@ -87,12 +85,12 @@ hugoblox:
     # Stick to top on scroll
     sticky: true
     # Menu alignment
-    align: left # left | center | right
+    align: center # left | center | right
     # Feature toggles
     search: true
     theme_toggle: true
-    theme_picker: false
-    language_switcher: false
+    theme_picker: true
+    language_switcher: true
     # Call-to-action button
     cta:
       enable: false
@@ -106,7 +104,7 @@ hugoblox:
   footer:
     # Footer style variant
     style: minimal # minimal | columns | centered
-    language_switcher: false
+    language_switcher: true
     # Custom footer text (HTML supported)
     text: ""
 
@@ -116,9 +114,9 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}"
+    notice: "© {year} {name}. This work is licensed under {license}"
     license:
-      type: custom # cc | custom
+      type: cc # cc | custom
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -157,7 +155,7 @@ hugoblox:
   content:
     # Math rendering
     math:
-      enable: true
+      enable: false
     # Table of contents
     toc:
       enable: true
@@ -175,10 +173,7 @@ hugoblox:
   search:
     enable: true
     # Trending/suggested search terms
-    suggestions:
-      - Land Use
-      - Transportation
-      - Urban Modeling
+    suggestions: []
     # Quick action shortcuts in search modal
     quick_actions: []
 

@@ -69,11 +69,5 @@ security:
       - '^node$'
       - '^postcss$'
       - '^tailwindcss$'
-  node:
-    permissions:
-      # The existing deployment checkout is symlinked from ./public.
-      allowRead:
-        - '.'
-        - '../lmwang9527.github.io'
 sitemap:
   _merge: deep
