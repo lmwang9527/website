@@ -127,4 +127,21 @@ forbid_text "$DEST/index.html" 'hb-card-media' "homepage collection media markup
 forbid_text "$DEST/index.html" 'article-grid' "homepage image-grid fallback"
 forbid_text "$DEST/index.html" '<iframe' "homepage presentation embed markup"
 
+# Homepage section order and layout hooks are explicit content contracts. Keep
+# Posts before Contact so the legacy homepage rhythm is not silently changed by
+# a theme migration, and require the stable classes used by custom.css for the
+# four-column/eight-column heading layout.
+talks_pos=$(grep -bo 'id=talks' "$DEST/index.html" | head -n 1 | cut -d: -f1)
+news_pos=$(grep -bo 'id=news' "$DEST/index.html" | head -n 1 | cut -d: -f1)
+contact_pos=$(grep -bo 'id=contact' "$DEST/index.html" | head -n 1 | cut -d: -f1)
+[ -n "$talks_pos" ] || fail "homepage Talks section is missing"
+[ -n "$news_pos" ] || fail "homepage Posts section is missing"
+[ -n "$contact_pos" ] || fail "homepage Contact section is missing"
+[ "$talks_pos" -lt "$news_pos" ] || fail "homepage Talks section must precede Posts"
+[ "$news_pos" -lt "$contact_pos" ] || fail "homepage Posts section must precede Contact"
+require_text "$DEST/index.html" "legacy-section-talks" "Talks layout hook"
+require_text "$DEST/index.html" "legacy-section-news" "Posts layout hook"
+require_text "$DEST/index.html" "legacy-section-contact" "Contact layout hook"
+require_text "$CUSTOM_CSS" ".legacy-collection-section>.flex.flex-col.items-center:not(.px-6)" "stable collection heading selector"
+
 echo "PASS: migrated content and presentation invariants hold"

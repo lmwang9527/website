@@ -190,10 +190,13 @@ body.page-wrapper a:hover {
   text-align: left;
 }
 
-/* Collection sections retain the text-only cards while adopting old layout. */
-#papers,
-#talks,
-#news {
+/* Collection sections retain the text-only cards while adopting old layout.
+   The explicit classes come from content/_index.md and survive Hugo Blox
+   upgrades; the two generated wrapper roles are distinguished by their
+   stable utility-class combinations rather than child-number assumptions. */
+#papers.legacy-collection-section,
+#talks.legacy-collection-section,
+#news.legacy-collection-section {
   display: grid;
   grid-template-columns: minmax(0, 33.3333%) minmax(0, 66.6667%);
   column-gap: 30px;
@@ -202,36 +205,42 @@ body.page-wrapper a:hover {
   padding-left: max(15px, calc((100% - var(--legacy-container)) / 2 + 15px));
 }
 
-#papers > .home-section-bg,
-#talks > .home-section-bg,
-#news > .home-section-bg {
+#papers.legacy-collection-section > .home-section-bg,
+#talks.legacy-collection-section > .home-section-bg,
+#news.legacy-collection-section > .home-section-bg {
   display: none;
 }
 
-#papers > .flex.flex-col:nth-child(2),
-#talks > .flex.flex-col:nth-child(2),
-#news > .flex.flex-col:nth-child(2) {
+#papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6),
+#talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6),
+#news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) {
   grid-column: 1;
   grid-row: 1;
   align-items: flex-start;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0;
 }
 
-#papers > .flex.flex-col:nth-child(2) > div,
-#talks > .flex.flex-col:nth-child(2) > div,
-#news > .flex.flex-col:nth-child(2) > div {
+#papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
+#talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
+#news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div {
   margin: 0;
   text-align: left;
   font-size: 2rem;
   font-weight: 400;
 }
 
-#papers > .flex.flex-col:nth-child(3),
-#talks > .flex.flex-col:nth-child(3),
-#news > .flex.flex-col:nth-child(3) {
+#papers.legacy-collection-section > .flex.flex-col.items-center.px-6,
+#talks.legacy-collection-section > .flex.flex-col.items-center.px-6,
+#news.legacy-collection-section > .flex.flex-col.items-center.px-6 {
   grid-column: 2;
   grid-row: 1;
   align-items: stretch;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -315,16 +324,16 @@ body.page-wrapper a:hover {
   #teaching > div.flex.flex-col > :first-child,
   #software > div.flex.flex-col > :first-child,
   #contact > div.flex.flex-col > :first-child,
-  #papers > .flex.flex-col:nth-child(2) > div,
-  #talks > .flex.flex-col:nth-child(2) > div,
-  #news > .flex.flex-col:nth-child(2) > div {
+  #papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
+  #talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
+  #news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div {
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
   }
 
-  #papers > .flex.flex-col:nth-child(3),
-  #talks > .flex.flex-col:nth-child(3),
-  #news > .flex.flex-col:nth-child(3) {
+  #papers.legacy-collection-section > .flex.flex-col.items-center.px-6,
+  #talks.legacy-collection-section > .flex.flex-col.items-center.px-6,
+  #news.legacy-collection-section > .flex.flex-col.items-center.px-6 {
     margin-top: 1.5rem;
   }
 }

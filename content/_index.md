@@ -40,6 +40,7 @@ sections:
         featured_only: true
     design:
       view: citation
+      css_class: legacy-collection-section legacy-section-papers
 
   - block: markdown
     id: teaching
@@ -55,6 +56,7 @@ sections:
         - [USP654: Data Analysis II](https://usp654.github.io)
     design:
       columns: '1'
+      css_class: legacy-text-section legacy-section-teaching
 
   - block: markdown
     id: software
@@ -68,6 +70,7 @@ sections:
         - [UrbanSim](http://www.urbansim.com/)
     design:
       columns: '1'
+      css_class: legacy-text-section legacy-section-software
 
   - block: collection
     id: talks
@@ -78,6 +81,20 @@ sections:
           - events
     design:
       view: date-title-summary
+      css_class: legacy-collection-section legacy-section-talks
+
+  - block: collection
+    id: news
+    content:
+      title: Posts
+      page_type: blog
+      count: 10
+      filters:
+        folders:
+          - blog
+    design:
+      view: date-title-summary
+      css_class: legacy-collection-section legacy-section-news
 
   - block: markdown
     id: contact
@@ -93,16 +110,5 @@ sections:
         [Schedule an appointment](https://calendly.com/lmwang)
     design:
       columns: '1'
-
-  - block: collection
-    id: news
-    content:
-      title: Posts
-      page_type: blog
-      count: 10
-      filters:
-        folders:
-          - blog
-    design:
-      view: date-title-summary
+      css_class: legacy-text-section legacy-section-contact
 ---
