@@ -40,6 +40,7 @@ body.page-wrapper {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1rem;
   line-height: inherit;
+  overflow-x: clip;
 }
 
 body.page-wrapper h1,
@@ -167,8 +168,9 @@ body.page-wrapper a:hover {
   gap: 30px;
   align-items: start;
   max-width: var(--legacy-container);
-  padding-right: 15px;
-  padding-left: 15px;
+  /* Match collection sections' 15px outer gutter plus 15px inner gutter. */
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 #research > div.flex.flex-col > :first-child,
