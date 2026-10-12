@@ -1,13 +1,4 @@
 ---
-title: Recent & Upcoming Talks
-cms_exclude: true
-#url: talk
-
-# View
+title: Talks
 view: date-title-summary
-
-# Optional cover image (relative to `assets/media/` folder).
-image:
-  caption: ''
-  filename: ''
 ---

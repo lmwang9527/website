@@ -18,6 +18,4 @@ links:
 
 ## Presentation
 
-The original slide deck for this guest lecture is embedded below. You can also [open the slides directly](https://hotdeck.github.io/usp549f17/) in a new tab.
-
-{{< slides-embed src="https://hotdeck.github.io/usp549f17/" title="Land Use Models for Regional Planning and Growth Management slides" >}}
+The original slide deck for this guest lecture is available online. [Open the original slides](https://hotdeck.github.io/usp549f17/).

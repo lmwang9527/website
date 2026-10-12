@@ -1,16 +1,14 @@
+# Navigation Links
+#   To link a page section, specify the URL as a hash `/#` followed by the `id` of the section.
+#   The `weight` parameter defines the order that the links will appear in.
+
 main:
   - name: Home
-    url: /
+    url: /#top
     weight: 10
   - name: Research
     url: /#research
     weight: 20
-  - name: Teaching
-    url: /#teaching
-    weight: 25
-  - name: Software
-    url: /#software
-    weight: 26
   - name: Publications
     url: /publications/
     weight: 30
@@ -20,6 +18,42 @@ main:
   - name: Posts
     url: /blog/
     weight: 50
+  - name: Teaching
+    url: /#teaching
+    weight: 60
   - name: Contact
     url: /#contact
-    weight: 60
+    weight: 70
+
+# Footer links (4-column layout)
+#   Top-level items become column headings, children become links.
+footer:
+  - name: Site
+    weight: 10
+  - parent: Site
+    name: Home
+    url: /#top
+    weight: 10
+  - parent: Site
+    name: Publications
+    url: /publications/
+    weight: 20
+  - parent: Site
+    name: Talks
+    url: /events/
+    weight: 30
+  - parent: Site
+    name: Posts
+    url: /blog/
+    weight: 40
+
+  - name: Contact
+    weight: 20
+  - parent: Contact
+    name: Email Liming Wang
+    url: mailto:lmwang+web@gmail.com
+    weight: 10
+  - parent: Contact
+    name: Portland State University
+    url: https://www.pdx.edu/
+    weight: 20

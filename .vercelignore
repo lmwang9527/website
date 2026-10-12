@@ -1,5 +1,7 @@
-# Local checkout artifacts; the site is generated into a clean public directory.
 public
-themes
+resources
+node_modules
+.hugo_build.lock
 .Rhistory
 .Rproj.user
+themes

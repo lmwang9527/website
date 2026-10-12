@@ -22,6 +22,4 @@ links:
 
 ## Presentation
 
-This presentation was delivered at the 57th ACSP Annual Conference in Denver, Colorado, on October 13, 2017. The original slide deck is embedded below; you can also [open the slides directly](https://hotdeck.github.io/acsp2017/) in a new tab.
-
-{{< slides-embed src="https://hotdeck.github.io/acsp2017/" title="Statistical Models vs Machine Learning slides" >}}
+This presentation was delivered at the 57th ACSP Annual Conference in Denver, Colorado, on October 13, 2017. [Open the original slides](https://hotdeck.github.io/acsp2017/).

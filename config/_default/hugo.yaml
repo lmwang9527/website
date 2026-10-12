@@ -5,27 +5,45 @@
 
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: 'Liming Wang'
-# Website URL
-baseURL: 'https://lmwang.info/'
-
-############################
-## LANGUAGE
-############################
-
-defaultContentLanguage: en
-hasCJKLanguage: true
-defaultContentLanguageInSubdir: false
-removePathAccents: true
+baseURL: 'https://lmwang.info/' # Website URL
 
 ############################
 ## PAGE OPTIONS
 ############################
 
 cascade:
+  # Blog post options
   - target:
-      path: /slides/**
+      path: /blog/**
       kind: page
-    outputs: [HTML, present]
+    pager: true
+    editable: true
+    show_date: true
+    show_date_updated: true
+    reading_time: true
+    commentable: true
+    show_related: true
+    share: true
+    # Just use Breadcrumb for navigation on blog post pages?
+    show_breadcrumb: false
+    header:
+      navbar:
+        enable: true
+  # Blog section options
+  - target:
+      path: /blog/*
+      kind: section
+    # Set the listing view
+    view: date-title-summary
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
 
 ############################
 ## ADVANCED
@@ -43,7 +61,7 @@ footnotereturnlinkcontents: <sup>^</sup>
 ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: false
 outputs:
-  home: [HTML, RSS, headers, redirects, backlinks]
+  home: [HTML, RSS, headers, redirects]
   section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos
@@ -52,9 +70,9 @@ imaging:
   hint: picture
 timeout: 600000
 taxonomies:
-  author: authors
   tag: tags
-  publication_type: publication_types
+  category: categories
+  author: authors
 markup:
   _merge: deep
   highlight:
@@ -69,11 +87,5 @@ security:
       - '^node$'
       - '^postcss$'
       - '^tailwindcss$'
-  node:
-    permissions:
-      # The existing deployment checkout is symlinked from ./public.
-      allowRead:
-        - '.'
-        - '../lmwang9527.github.io'
 sitemap:
   _merge: deep

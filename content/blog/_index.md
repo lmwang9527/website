@@ -1,4 +1,4 @@
 ---
-title: Blog
-view: date-title-summary
+title: Posts
+view: card
 ---

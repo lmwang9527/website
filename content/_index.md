@@ -1,37 +1,35 @@
 ---
-title: ''
-summary: ''
+title: Home
+date: 2026-10-12
 type: landing
 
 sections:
-  - block: resume-biography-3
+  - block: hero
+    id: top
     content:
-      username: me
-      headings:
-        about: Biography
-        education: Education
-        interests: Research interests
-    design:
-      background:
-        gradient_mesh:
-          enable: true
-      name:
-        size: md
-      avatar:
-        size: medium
-        shape: circle
+      eyebrow: Liming Wang
+      title: Data-driven research for better cities
+      text: Associate Professor of Urban Studies and Planning at Portland State University. My research examines land use, transportation, urban modeling, and equity.
+      primary_action:
+        text: Explore research
+        url: "#research"
+        icon: magnifying-glass
+        style: gradient
+      secondary_action:
+        text: View publications
+        url: /publications/
+        icon: book-open
+        style: ghost
 
   - block: markdown
     id: research
     content:
       title: Research
-      text: |-
-        Dr. Wang’s research takes a data-driven approach to address challenging issues in planning, in particular those intersecting land use and transportation. Relying on data analysis, simulation and visualization techniques, his research aims to inform policy makers and the public of the effects of infrastructure and policy choices on community outcomes such as accessibility, environment, and equity.
-    design:
-      columns: '1'
+      text: |
+        My research takes a data-driven approach to challenging issues in planning, particularly those intersecting land use and transportation. I use data analysis, simulation, and visualization to inform policy makers and the public about how infrastructure and policy choices affect accessibility, the environment, and equity.
 
   - block: collection
-    id: papers
+    id: publications
     content:
       title: Selected Publications
       filters:
@@ -40,13 +38,12 @@ sections:
         featured_only: true
     design:
       view: citation
-      css_class: legacy-collection-section legacy-section-papers
 
   - block: markdown
     id: teaching
     content:
       title: Teaching
-      text: |-
+      text: |
         - [Introduction to Data Science](https://cities.github.io/datascience2017)
         - [USP414/514: Transportation Seminar](http://trec.pdx.edu/events)
         - USP570: Transportation and Land Use
@@ -54,23 +51,17 @@ sections:
         - USP657: Discrete Choice Modeling
         - [USP634: Data Analysis I](https://usp634.github.io)
         - [USP654: Data Analysis II](https://usp654.github.io)
-    design:
-      columns: '1'
-      css_class: legacy-text-section legacy-section-teaching
 
   - block: markdown
     id: software
     content:
       title: Software
-      text: |-
+      text: |
         - [VETravelDemandMM](https://github.com/cities-lab/VETravelDemandMM)
         - [Transportation Cost Index](https://github.com/cities-lab/tci)
         - [tidytable1](https://github.com/cities-lab/tidytable1)
         - [lehdr](https://github.com/jamgreen/lehdr)
         - [UrbanSim](http://www.urbansim.com/)
-    design:
-      columns: '1'
-      css_class: legacy-text-section legacy-section-software
 
   - block: collection
     id: talks
@@ -81,10 +72,9 @@ sections:
           - events
     design:
       view: date-title-summary
-      css_class: legacy-collection-section legacy-section-talks
 
   - block: collection
-    id: news
+    id: posts
     content:
       title: Posts
       page_type: blog
@@ -94,13 +84,12 @@ sections:
           - blog
     design:
       view: date-title-summary
-      css_class: legacy-collection-section legacy-section-news
 
   - block: markdown
     id: contact
     content:
       title: Contact
-      text: |-
+      text: |
         **Email:** [lmwang+web@gmail.com](mailto:lmwang+web@gmail.com)
 
         **Address:** 506 SW Mill St, Portland, OR 97207, United States
@@ -108,7 +97,4 @@ sections:
         **Office hours:** Mondays 16:00 to 17:00
 
         [Schedule an appointment](https://calendly.com/lmwang)
-    design:
-      columns: '1'
-      css_class: legacy-text-section legacy-section-contact
 ---
