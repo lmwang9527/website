@@ -22,8 +22,16 @@
 
 /* Academic v4's body and heading rhythm. */
 html {
-  font-size: 16px;
+  /* Source Themes Academic 4.5: html { font-size: 16.17px; } */
+  font-size: 16.17px;
   line-height: 1.65;
+}
+
+/* Source Themes Academic 4.5 enlarged the type scale on wide screens. */
+@media screen and (min-width: 58em) {
+  html {
+    font-size: 21px;
+  }
 }
 
 body.page-wrapper {
@@ -267,10 +275,6 @@ body.page-wrapper a:hover {
 }
 
 @media (max-width: 767.98px) {
-  html {
-    font-size: 16px;
-  }
-
   .page-body > section.hbb-section {
     padding-top: var(--legacy-section-space-mobile);
     padding-bottom: var(--legacy-section-space-mobile);

@@ -57,6 +57,8 @@ CUSTOM_CSS=$(find "$DEST/css" -maxdepth 1 -type f -name 'custom*.css' -print -qu
 require_text "$CUSTOM_CSS" "--legacy-primary:#2962ff" "legacy primary color token"
 require_text "$CUSTOM_CSS" "--legacy-section-space:110px" "legacy desktop section spacing token"
 require_text "$CUSTOM_CSS" "max-width:var(--legacy-container)" "legacy content width rule"
+require_text "$CUSTOM_CSS" "font-size:16.17px" "legacy base font size"
+require_text "$CUSTOM_CSS" "font-size:21px" "legacy wide-screen font size"
 require_text "$DEST/index.html" "family=Montserrat" "legacy heading font pack"
 require_text "$DEST/index.html" "family=Roboto" "legacy body font pack"
 if grep -R -Fq -- 'lmwang.tk' "$DEST"; then

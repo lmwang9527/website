@@ -57,9 +57,9 @@ kept in two repository-owned files:
   Roboto body/navigation stack, so the font pack remains available if Hugo
   Blox changes its built-in packs.
 - `assets/css/custom.css` defines the old `#2962ff` link/accent color, 1200px
-  content width, 110px desktop/60px mobile section rhythm, restrained cards,
-  navbar, footer, and responsive 4:8 heading/content layout. Hugo Blox loads
-  it after generated CSS automatically.
+  content width, 16.17px base/21px wide-screen root scale, 110px desktop/60px
+  mobile section rhythm, restrained cards, navbar, footer, and responsive 4:8
+  heading/content layout. Hugo Blox loads it after generated CSS automatically.
 
 When upgrading Hugo or Hugo Blox, keep this stylesheet and font pack intact,
 run `scripts/verify-site.sh`, and inspect the homepage at desktop and mobile
