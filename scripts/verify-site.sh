@@ -142,6 +142,6 @@ contact_pos=$(grep -bo 'id=contact' "$DEST/index.html" | head -n 1 | cut -d: -f1
 require_text "$DEST/index.html" "legacy-section-talks" "Talks layout hook"
 require_text "$DEST/index.html" "legacy-section-news" "Posts layout hook"
 require_text "$DEST/index.html" "legacy-section-contact" "Contact layout hook"
-require_text "$CUSTOM_CSS" ".legacy-collection-section>.flex.flex-col.items-center:not(.px-6)" "stable collection heading selector"
+require_text "$CUSTOM_CSS" ".legacy-collection-section>.flex.flex-col.max-w-prose" "stable collection heading selector"
 
 echo "PASS: migrated content and presentation invariants hold"

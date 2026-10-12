@@ -211,9 +211,9 @@ body.page-wrapper a:hover {
   display: none;
 }
 
-#papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6),
-#talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6),
-#news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) {
+#papers.legacy-collection-section > .flex.flex-col.max-w-prose,
+#talks.legacy-collection-section > .flex.flex-col.max-w-prose,
+#news.legacy-collection-section > .flex.flex-col.max-w-prose {
   grid-column: 1;
   grid-row: 1;
   align-items: flex-start;
@@ -223,9 +223,9 @@ body.page-wrapper a:hover {
   padding: 0;
 }
 
-#papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
-#talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
-#news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div {
+#papers.legacy-collection-section > .flex.flex-col.max-w-prose > div,
+#talks.legacy-collection-section > .flex.flex-col.max-w-prose > div,
+#news.legacy-collection-section > .flex.flex-col.max-w-prose > div {
   margin: 0;
   text-align: left;
   font-size: 2rem;
@@ -324,9 +324,9 @@ body.page-wrapper a:hover {
   #teaching > div.flex.flex-col > :first-child,
   #software > div.flex.flex-col > :first-child,
   #contact > div.flex.flex-col > :first-child,
-  #papers.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
-  #talks.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div,
-  #news.legacy-collection-section > .flex.flex-col.items-center:not(.px-6) > div {
+  #papers.legacy-collection-section > .flex.flex-col.max-w-prose > div,
+  #talks.legacy-collection-section > .flex.flex-col.max-w-prose > div,
+  #news.legacy-collection-section > .flex.flex-col.max-w-prose > div {
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
   }
