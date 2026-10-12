@@ -232,9 +232,9 @@ body.page-wrapper a:hover {
   font-weight: 400;
 }
 
-#papers.legacy-collection-section > .flex.flex-col.items-center.px-6,
-#talks.legacy-collection-section > .flex.flex-col.items-center.px-6,
-#news.legacy-collection-section > .flex.flex-col.items-center.px-6 {
+#papers.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose),
+#talks.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose),
+#news.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose) {
   grid-column: 2;
   grid-row: 1;
   align-items: stretch;
@@ -331,9 +331,9 @@ body.page-wrapper a:hover {
     font-size: 1.75rem;
   }
 
-  #papers.legacy-collection-section > .flex.flex-col.items-center.px-6,
-  #talks.legacy-collection-section > .flex.flex-col.items-center.px-6,
-  #news.legacy-collection-section > .flex.flex-col.items-center.px-6 {
+  #papers.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose),
+  #talks.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose),
+  #news.legacy-collection-section > .flex.flex-col.items-center:not(.max-w-prose) {
     margin-top: 1.5rem;
   }
 }
