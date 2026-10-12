@@ -11,7 +11,7 @@ authors:
 featured: true
 image:
   alt_text: Aerial view of downtown Portland, Oregon, with the Willamette River and bridges.
-  caption: 'Portland, Oregon aerial view, by Dicklyon, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portland_OR_aerial.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized for display; see [image credits](/image-credits/).'
+  caption: 'Illustrative regional-planning image: Portland, Oregon aerial view, by Dicklyon, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portland_OR_aerial.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Cropped and resized for display; see [image credits](/image-credits/).'
 math: true
 abstract: |
   This guest lecture contrasts community-oriented regional visioning with predictive land-use models, explains how land-use models support growth-management and transportation planning, and reviews the evolution and practical application of these models. It uses examples from the Puget Sound Regional Council and Metro in the Portland region to show how model forecasts connect policy scenarios, land-use change, and transportation-system analysis.

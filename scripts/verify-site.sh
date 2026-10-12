@@ -47,8 +47,10 @@ grep -Fq 'featured-image' "${site_dir}/publications/open-science-transportation-
 grep -Fq 'alt="Rows of servers in a CERN computing room."' "${site_dir}/publications/open-science-transportation-llms/index.html"
 grep -Fq 'CC BY-SA 3.0' "${site_dir}/publications/open-science-transportation-llms/index.html"
 grep -Fq 'featured-image' "${site_dir}/publications/detransformation-bias-trip-generation/index.html"
+grep -Fq 'alt="Vehicles traveling beneath the elevated roadways of the High Five Interchange in Dallas."' "${site_dir}/publications/detransformation-bias-trip-generation/index.html"
 grep -Fq 'CC BY 2.0' "${site_dir}/publications/detransformation-bias-trip-generation/index.html"
 grep -Fq 'featured-image' "${site_dir}/publications/housing-location-choices-of-the-poor/index.html"
+grep -Fq 'alt="A Kimball-bound Chicago Brown Line train leaving Merchandise Mart station."' "${site_dir}/publications/housing-location-choices-of-the-poor/index.html"
 grep -Fq 'CC BY-SA 4.0' "${site_dir}/publications/housing-location-choices-of-the-poor/index.html"
 
 grep -Fq 'Statistical Models vs Machine Learning' "${site_dir}/events/acsp2017/index.html"
@@ -56,7 +58,8 @@ grep -Fq 'https://hotdeck.github.io/acsp2017/' "${site_dir}/events/acsp2017/inde
 grep -Fq 'Land Use Models for Regional Planning and Growth Management' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'https://hotdeck.github.io/usp549f17/' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'featured-image' "${site_dir}/events/acsp2017/index.html"
-grep -Fq 'CC0 1.0' "${site_dir}/events/acsp2017/index.html"
+grep -Fq 'CC BY-SA 3.0' "${site_dir}/events/acsp2017/index.html"
+grep -Fq 'Illustration of training error falling while validation error rises after its minimum, showing overfitting.' "${site_dir}/events/acsp2017/index.html"
 grep -Fq 'featured-image' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'CC BY-SA 4.0' "${site_dir}/events/usp549f17/index.html"
 
@@ -78,7 +81,7 @@ done
 grep -Fq 'CC BY-SA 4.0' "${site_dir}/image-credits/index.html"
 grep -Fq 'CC BY 2.0' "${site_dir}/image-credits/index.html"
 grep -Fq 'CC BY-SA 3.0' "${site_dir}/image-credits/index.html"
-grep -Fq 'CC0 1.0' "${site_dir}/image-credits/index.html"
+grep -Fq 'CC BY-SA 3.0' "${site_dir}/image-credits/index.html"
 
 if find "${site_dir}" -type f -name '*.html' -exec grep -IiqE 'Alex Johnson|Meta AI|example\.com' {} +; then
   echo "demo identity remains in generated site" >&2
