@@ -58,8 +58,8 @@ grep -Fq 'https://hotdeck.github.io/acsp2017/' "${site_dir}/events/acsp2017/inde
 grep -Fq 'Land Use Models for Regional Planning and Growth Management' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'https://hotdeck.github.io/usp549f17/' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'featured-image' "${site_dir}/events/acsp2017/index.html"
-grep -Fq 'CC BY-SA 3.0' "${site_dir}/events/acsp2017/index.html"
-grep -Fq 'Illustration of training error falling while validation error rises after its minimum, showing overfitting.' "${site_dir}/events/acsp2017/index.html"
+grep -Fq 'Public Domain Mark 1.0' "${site_dir}/events/acsp2017/index.html"
+grep -Fq 'A multivariate scatter plot rendered with VisIt, with colored data points in three dimensions.' "${site_dir}/events/acsp2017/index.html"
 grep -Fq 'featured-image' "${site_dir}/events/usp549f17/index.html"
 grep -Fq 'CC BY-SA 4.0' "${site_dir}/events/usp549f17/index.html"
 
@@ -68,7 +68,7 @@ grep -Fq 'Possible Solutions' "${site_dir}/blog/creating-tables/index.html"
 grep -Fq 'My solution/hack' "${site_dir}/blog/creating-tables/index.html"
 
 for image in \
-  "events/acsp2017/featured.png" \
+  "events/acsp2017/featured.jpg" \
   "events/usp549f17/featured.jpg" \
   "publications/detransformation-bias-trip-generation/featured.jpg" \
   "publications/housing-location-choices-of-the-poor/featured.jpg" \
@@ -80,7 +80,7 @@ for image in \
 done
 grep -Fq 'CC BY-SA 4.0' "${site_dir}/image-credits/index.html"
 grep -Fq 'CC BY 2.0' "${site_dir}/image-credits/index.html"
-grep -Fq 'CC BY-SA 3.0' "${site_dir}/image-credits/index.html"
+grep -Fq 'Public Domain Mark 1.0' "${site_dir}/image-credits/index.html"
 grep -Fq 'CC BY-SA 3.0' "${site_dir}/image-credits/index.html"
 
 if find "${site_dir}" -type f -name '*.html' -exec grep -IiqE 'Alex Johnson|Meta AI|example\.com' {} +; then
