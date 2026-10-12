@@ -2,9 +2,6 @@ main:
   - name: Bio
     url: /
     weight: 10
-  - name: Research
-    url: /#research
-    weight: 11
   - name: Papers
     url: /#papers
     weight: 12
@@ -17,7 +14,7 @@ main:
   - name: Talks
     url: /#talks
     weight: 15
-  - name: News
+  - name: Posts
     url: /#news
     weight: 16
   - name: Contact

@@ -23,16 +23,6 @@ sections:
         size: medium
         shape: circle
 
-  - block: markdown
-    id: research
-    content:
-      title: '📚 Research'
-      subtitle: ''
-      text: |-
-        Dr. Wang’s research takes a data-driven approach to address challenging issues in planning, in particular those intersecting land use and transportation. Relying on data analysis, simulation and visualization techniques, his research aims to inform policy makers and the public of the effects of infrastructure and policy choices on community outcomes such as accessibility, environment, and equity.
-    design:
-      columns: '1'
-
   - block: collection
     id: papers
     content:
