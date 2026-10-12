@@ -59,6 +59,7 @@ require_text "$CUSTOM_CSS" "--legacy-section-space:110px" "legacy desktop sectio
 require_text "$CUSTOM_CSS" "max-width:var(--legacy-container)" "legacy content width rule"
 require_text "$CUSTOM_CSS" "font-size:16.17px" "legacy base font size"
 require_text "$CUSTOM_CSS" "font-size:21px" "legacy wide-screen font size"
+require_text "$CUSTOM_CSS" "font-size:16.17px}#site-header" "legacy navbar font size"
 require_text "$DEST/index.html" "family=Montserrat" "legacy heading font pack"
 require_text "$DEST/index.html" "family=Roboto" "legacy body font pack"
 if grep -R -Fq -- 'lmwang.tk' "$DEST"; then

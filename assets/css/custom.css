@@ -79,7 +79,9 @@ body.page-wrapper a:hover {
   margin: 0 auto;
   padding: 0 1rem;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 1rem;
+  /* Academic v4 kept navbar text at the base 16.17px size even when the
+     content scale became 21px on wide screens. */
+  font-size: 16.17px;
 }
 
 #site-header .navbar-brand {
@@ -271,6 +273,17 @@ body.page-wrapper a:hover {
 @media (max-width: 991.98px) {
   #site-header .navbar {
     min-height: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  #site-header .navbar {
+    flex-wrap: nowrap;
+  }
+
+  #site-header #nav-menu {
+    width: auto;
+    padding-bottom: 0;
   }
 }
 
