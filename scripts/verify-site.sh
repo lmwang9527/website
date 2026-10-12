@@ -47,6 +47,18 @@ forbid_text() {
 
 require_file "$DEST/index.html" "homepage"
 require_text "$DEST/index.html" "$SITE_BASE_URL" "canonical site URL"
+
+# The legacy Academic visual layer is a repository-owned stylesheet loaded
+# after Hugo Blox's generated CSS.  Check its stable path and tokens, not its
+# fingerprint, so Hugo asset hashing can change safely across upgrades.
+require_text "$DEST/index.html" "/css/custom" "legacy visual stylesheet link"
+CUSTOM_CSS=$(find "$DEST/css" -maxdepth 1 -type f -name 'custom*.css' -print -quit)
+[ -n "$CUSTOM_CSS" ] || fail "legacy visual stylesheet was not emitted"
+require_text "$CUSTOM_CSS" "--legacy-primary:#2962ff" "legacy primary color token"
+require_text "$CUSTOM_CSS" "--legacy-section-space:110px" "legacy desktop section spacing token"
+require_text "$CUSTOM_CSS" "max-width:var(--legacy-container)" "legacy content width rule"
+require_text "$DEST/index.html" "family=Montserrat" "legacy heading font pack"
+require_text "$DEST/index.html" "family=Roboto" "legacy body font pack"
 if grep -R -Fq -- 'lmwang.tk' "$DEST"; then
   fail "old lmwang.tk URL remains in generated output"
 fi

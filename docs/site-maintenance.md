@@ -20,6 +20,10 @@ fresh temporary directory, so it does not follow or overwrite the local
 - The open-science publication and arXiv link remain present.
 - Events, blog, and homepage collection listings retain their expected titles
   without the blank image/media card markup.
+- The site-owned `assets/css/custom.css` legacy Academic visual layer is emitted
+  and still contains the tracked color, section-spacing, width, and typography
+  tokens. Its fingerprint is intentionally not asserted, so Hugo can rehash
+  the file during upgrades.
 
 The GitHub build workflow runs this check after the normal Hugo build and
 before the Pages artifact is uploaded. Vercel continues to use its own
@@ -42,6 +46,27 @@ deployment configuration.
    configuration and this check together, and document the reason in the
    commit.
 5. Merge only after the GitHub build passes and the Vercel preview is `READY`.
+
+## Legacy visual layer
+
+The current Hugo Blox templates are intentionally styled to resemble the
+pre-migration Source Themes Academic 4.5 site. The evidence-based values are
+kept in two repository-owned files:
+
+- `data/fonts/legacy-academic.yaml` defines the old Montserrat heading and
+  Roboto body/navigation stack, so the font pack remains available if Hugo
+  Blox changes its built-in packs.
+- `assets/css/custom.css` defines the old `#2962ff` link/accent color, 1200px
+  content width, 110px desktop/60px mobile section rhythm, restrained cards,
+  navbar, footer, and responsive 4:8 heading/content layout. Hugo Blox loads
+  it after generated CSS automatically.
+
+When upgrading Hugo or Hugo Blox, keep this stylesheet and font pack intact,
+run `scripts/verify-site.sh`, and inspect the homepage at desktop and mobile
+widths. If a template changes its semantic section IDs or the custom CSS hook,
+adapt only the repository-owned selectors or hook configuration and add a
+regression assertion before merging. Never copy the old generated
+`css/academic.css` into the repository or edit `_vendor/`/`public/`.
 
 The intentionally unpublished Creating Word Documents page can be restored
 only after its missing body is recovered and reviewed; changing its draft flag
