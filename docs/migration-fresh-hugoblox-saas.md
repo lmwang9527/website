@@ -29,3 +29,8 @@ Run `scripts/verify-site.sh` after Hugo or Hugo Blox upgrades. It builds with
 Hugo Extended 0.166.0 and checks the important published routes and draft
 exclusion without asserting any legacy visual details. If the upstream template
 is refreshed, record the new upstream commit here and re-run the same checks.
+
+The non-production Vercel preview project uses `HUGO_VERSION=0.166.0`,
+`GO_VERSION=1.21.5`, and `NODE_VERSION=22`. Hugo modules are vendored in
+`_vendor/` so the Vercel build does not depend on a Go executable being present
+at build time.
