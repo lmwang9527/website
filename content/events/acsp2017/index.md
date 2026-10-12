@@ -1,6 +1,7 @@
 ---
 title: 'Statistical Models vs Machine Learning: A Reflection with Two Case Studies'
 date: '2017-10-13T10:15:00Z'
+summary: 'Presentation at the 57th ACSP Annual Conference in Denver, October 13, 2017.'
 aliases:
   - /talk/acsp2017/
 event_name: The 57th ACSP Annual Conference

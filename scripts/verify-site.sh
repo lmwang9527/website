@@ -114,6 +114,7 @@ require_text "$EVENTS" "Statistical Models vs Machine Learning: A Reflection wit
 require_text "$BLOG" "Creating Tables for Microsoft Word Output with R Markdown" "blog listing title"
 forbid_text "$EVENTS" '<img' "event listing image/media markup"
 forbid_text "$EVENTS" '<picture' "event listing picture/media markup"
+forbid_text "$EVENTS" '<iframe' "event listing presentation embed markup"
 forbid_text "$BLOG" '<img' "blog listing image/media markup"
 forbid_text "$BLOG" '<picture' "blog listing picture/media markup"
 
@@ -124,5 +125,6 @@ require_text "$DEST/index.html" "Land Use Models for Regional Planning and Growt
 require_text "$DEST/index.html" "Creating Tables for Microsoft Word Output with R Markdown" "homepage posts title"
 forbid_text "$DEST/index.html" 'hb-card-media' "homepage collection media markup"
 forbid_text "$DEST/index.html" 'article-grid' "homepage image-grid fallback"
+forbid_text "$DEST/index.html" '<iframe' "homepage presentation embed markup"
 
 echo "PASS: migrated content and presentation invariants hold"

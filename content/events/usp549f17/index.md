@@ -1,6 +1,7 @@
 ---
 title: 'Land Use Models for Regional Planning and Growth Management'
 date: '2017-10-18T15:00:00Z'
+summary: 'Guest lecture for USP 549, October 18, 2017.'
 aliases:
   - /talk/usp549f17/
 event_name: Guest lecture for USP 549
