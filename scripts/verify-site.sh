@@ -18,7 +18,7 @@ for path in "${markdown_files[@]}"; do
 done
 
 required_routes=(
-  index.html publications.html teaching.html talks.html posts.html posts.xml contact.html image-credits.html
+  index.html publications.html teaching.html talks.html posts.html posts.xml contact.html
   posts/creating-tables/index.html
   posts/talk-acsp2017/index.html
   posts/talk-usp549f17/index.html
@@ -33,11 +33,19 @@ test ! -e "$site/posts/creating-word-doc/index.html" || {
   exit 1
 }
 
-for image in files/favicon.png files/profiles/liming-wang.jpg files/images/high-five-interchange.jpg \
-  files/images/chicago-brown-line.jpg files/images/cern-server.jpg \
-  files/images/acsp-scatter-plot.jpg files/images/portland-aerial.jpg; do
+for image in files/favicon.png files/profiles/liming-wang.jpg; do
   test -s "$site/$image" || { echo "Missing copied image: $image" >&2; exit 1; }
 done
+
+if rg -ni 'high-five-interchange|chicago-brown-line|cern-server|acsp-scatter-plot|portland-aerial|Image credit:|commons\.wikimedia\.org|image-credits' "$site"; then
+  echo "Removed stock-image, credit, or image-credits content remains in rendered output" >&2
+  exit 1
+fi
+
+if rg -ni '<img|files/images/' "$site/talks.html" "$site/posts/talk-acsp2017/index.html" "$site/posts/talk-usp549f17/index.html"; then
+  echo "Talk listing or talk page contains an image or blank image placeholder" >&2
+  exit 1
+fi
 
 for slug in detransformation-bias-trip-generation housing-location-choices-of-the-poor open-science-transportation-llms; do
   for collection in publication publications; do
@@ -76,4 +84,4 @@ if test -e "$root/hugoblox.yaml" || test -e "$root/config/_default/hugo.yaml" \
   exit 1
 fi
 
-echo "Quarto site verification passed (${#required_routes[@]} public routes, draft excluded, images and migrated content present)."
+echo "Quarto site verification passed (${#required_routes[@]} public routes, draft excluded, profile assets and migrated content present)."

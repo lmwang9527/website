@@ -4,7 +4,6 @@ description: "Presentation at the 57th ACSP Annual Conference in Denver, October
 date: "2017-10-13T10:15:00-06:00"
 author: "Liming Wang"
 categories: [presentation, event]
-image: "/files/images/acsp-scatter-plot.jpg"
 aliases:
   - "/talk/acsp2017/index.html"
   - "/events/acsp2017/index.html"
@@ -13,10 +12,6 @@ event-url: "http://www.acsp.org/default.asp?page=ConfACSP"
 location: "Denver, CO"
 slides: "https://hotdeck.github.io/acsp2017/"
 ---
-
-![A multivariate scatter plot rendered with VisIt, with colored data points in three dimensions.](../../files/images/acsp-scatter-plot.jpg){fig-alt="A multivariate scatter plot rendered with VisIt, with colored data points in three dimensions"}
-
-*Image credit:* UCRL / Lawrence Livermore National Laboratory, [Scatter plot](https://commons.wikimedia.org/wiki/File:Scatter_plot.jpg), rendered with VisIt; public domain in the United States ([Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/)); cropped and resized.
 
 **Event:** [The 57th ACSP Annual Conference](http://www.acsp.org/default.asp?page=ConfACSP) · **When:** October 13, 2017, 10:15 a.m. · **Where:** Denver, Colorado
 

@@ -23,10 +23,6 @@ Junyi Ji, Ruth Lu, Linda Belkessa, **Liming Wang**, Silvia Varotto, Yongqi Dong,
 
 [arXiv:2601.14429](https://arxiv.org/abs/2601.14429) · [PDF](https://arxiv.org/pdf/2601.14429)
 
-![Rows of servers in a CERN computing room.](files/images/cern-server.jpg){fig-alt="Rows of servers in a CERN computing room"}
-
-*Image credit:* Florian Hirzinger, [CERN Server 03](https://commons.wikimedia.org/wiki/File:CERN_Server_03.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/); cropped and resized.
-
 **Abstract.** Open science initiatives have strengthened scientific integrity and accelerated research progress across many fields, but the state of their practice within transportation research remains under-investigated. Key features of open science, defined here as data and code availability, are difficult to extract due to the inherent complexity of the field. Previous work has either been limited to small-scale studies due to the labor-intensive nature of manual analysis or has relied on large-scale bibliometric approaches that sacrifice contextual richness. This paper introduces an automatic and scalable feature-extraction pipeline to measure code and data availability in transportation research. We employ Large Language Models (LLMs) for this task and validate their performance against a manually curated dataset and through an inter-rater agreement analysis. We applied this pipeline to examine 10,724 research articles published in the Transportation Research Part series of journals between 2019 and 2024. Our analysis found that only 5% of quantitative papers shared a code repository, 4% of quantitative papers shared a data repository, and about 3% of papers shared both, with trends differing across journals, topics, and geographic regions. We found no significant difference in citation counts or review duration between papers that provided data and code and those that did not, suggesting a misalignment between open science efforts and traditional academic metrics. Consequently, encouraging these practices will likely require structural interventions from journals and funding agencies to supplement the lack of direct author incentives. The pipeline developed in this study can be readily scaled to other journals, representing a critical step toward the automated measurement and monitoring of open science practices in transportation research.
 
 ---
@@ -37,10 +33,6 @@ Liming Wang and Kristin Currans. *Journal of Urban Planning and Development* (20
 
 [Publisher page](https://ascelibrary.org/doi/full/10.1061/%28ASCE%29UP.1943-5444.0000455)
 
-![Vehicles traveling beneath the elevated roadways of the High Five Interchange in Dallas.](files/images/high-five-interchange.jpg){fig-alt="Vehicles traveling beneath the elevated roadways of the High Five Interchange in Dallas"}
-
-*Image credit:* dherrera_96, [High Five Interchange](https://commons.wikimedia.org/wiki/File:High_Five_Interchange.jpg), [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), with crop/visibility changes by Beyond My Ken; cropped and resized.
-
 **Abstract.** In recent years, there have been substantial efforts from researchers and practitioners to improve the trip generation model in order to address some of the pitfalls of conventional approaches. These new trip generation models often adopt sophisticated non-linear model forms to utilize new information and incorporate new factors influencing trip generation. However, if sufficient caution is not taken in their application, these new trip generation models may generate severe biases. Two typical sources of biases in the applications of such models are aggregation bias and detransformation bias. The former arises when aggregate variables are included in an individual-level model or when naive aggregation of independent variables are conducted in prediction from a non-linear model, and the latter when de-transforming a non-linearly transformed dependent variable in the prediction process (e.g. predicting from a semi-log model). While these two types of biases are well known and corrections routinely suggested in other disciplines (Wooldridge, 2012, pp212-215) or even in other models of travel demand (Ortuzar and Willumsen, 2011), they have not been adopted in the new trip generation models. In this paper, we describe and demonstrate these two sources of biases with numeric simulations and empirical analyses, before discussing their implications and remedies in applications in the context of modeling trip generation.
 
 ---
@@ -50,9 +42,5 @@ Liming Wang and Kristin Currans. *Journal of Urban Planning and Development* (20
 Lingqian Hu and Liming Wang. *Housing Studies* (2017).
 
 [Publisher page](http://www.tandfonline.com/doi/abs/10.1080/02673037.2017.1364354)
-
-![A Kimball-bound Chicago Brown Line train leaving Merchandise Mart station.](files/images/chicago-brown-line.jpg){fig-alt="A Kimball-bound Chicago Brown Line train leaving Merchandise Mart station"}
-
-*Image credit:* Daniel Schwen, [CTA MM Kimball brown](https://commons.wikimedia.org/wiki/File:CTA_MM_Kimball_brown.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); cropped and resized.
 
 **Abstract.** This research investigates whether access to jobs affects poor households’ residential location choices using data from individual households in the Chicago Metropolitan Area. Our results, based on discrete choice models, show that the effects of job accessibility on household location choices are contingent upon households’ automobile ownership and employment status. Places with higher job accessibility by public transit mode are more likely to attract poor households that do not own cars but have at least one employed worker or one labour force participant, while job accessibility by automobile travel mode has no positive effect on the location choices of poor households who own automobiles. The results stress the importance of job accessibility for those poor households with limited transportation mobility but strong needs for access to jobs.

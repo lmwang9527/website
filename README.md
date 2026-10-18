@@ -9,4 +9,4 @@ quarto render
 scripts/verify-site.sh
 ```
 
-See [MIGRATION.md](MIGRATION.md) for the pinned template revision and content mapping. Image sources and licenses are documented on the [image credits page](https://lmwang.info/image-credits.html).
+See [MIGRATION.md](MIGRATION.md) for the pinned template revision and content mapping.
