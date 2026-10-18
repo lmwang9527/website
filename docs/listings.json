@@ -1,0 +1,15 @@
+[
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/creating-tables/index.html"
+    ]
+  },
+  {
+    "listing": "/talks.html",
+    "items": [
+      "/posts/talk-usp549f17/index.html",
+      "/posts/talk-acsp2017/index.html"
+    ]
+  }
+]

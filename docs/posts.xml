@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Liming Wang</title>
+<link>https://lmwang.info/posts.html</link>
+<atom:link href="https://lmwang.info/posts.xml" rel="self" type="application/rss+xml"/>
+<description>Posts, articles, and notes by Liming Wang.</description>
+<image>
+<url>https://lmwang.info/files/profiles/liming-wang.jpg</url>
+<title>Liming Wang</title>
+<link>https://lmwang.info/posts.html</link>
+</image>
+<generator>quarto-1.8.25</generator>
+<lastBuildDate>Sun, 22 Oct 2017 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Creating Tables for Microsoft Word Output with R Markdown</title>
+  <dc:creator>Liming Wang</dc:creator>
+  <link>https://lmwang.info/posts/creating-tables/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="r-markdown" class="level1">
+<h1>R Markdown</h1>
+<p>I have switched to solely use R Markdown for the <code>communication</code> step of my <a href="http://r4ds.had.co.nz/introduction.html">tidy work flow</a> and found it pleasant and actually prodocutive to use. However, there is one major hassle: output in Word format. In a perfect world, I would never need to use any Microsoft products ever again. In reality when I need to work with collaborators that do not use RMarkdown and funders of research projects that require reports in Word format (and a required style template), there are no other options. As a matter of fact, it seems that the only viable solution collaborating with anybody that doesn’t use RMarkdown and/or <code>git</code> is still MS Word as of 2017/10.</p>
+<p>Rendering R Markdown file to <code>word_document</code> works for the most part, except for sophisticated tables, which, unfortunately, are prevalent in most of my work.</p>
+</section>
+<section id="possible-solutions" class="level1">
+<h1>Possible Solutions</h1>
+<p>There are a few possible solutions, none of them good enough for me at this point:</p>
+<ol type="1">
+<li><code>Gmisc::docx_document</code> (the output is a HTML file with an additional CSS file; no support for Word style template).</li>
+<li>Convert HTML output to Word document through <code>soffice</code> (tables in the output do not resemble the HTML input; some support for template).</li>
+<li>Pure R solution <code>officer</code> + <code>flextable</code> (they can generate good-looking Word output, but they do not work with R Markdown yet; see below).</li>
+</ol>
+</section>
+<section id="my-solutionhack-as-of-201710" class="level1">
+<h1>My solution/hack (as of 2017/10)</h1>
+<ol type="1">
+<li>Render the R Markdown file with output set to <code>rmarkdown::word_document</code>.</li>
+<li>The R Markdown file uses <code>texreg</code>/<code>htmlreg</code> to generate HTML tables for regression results and saves them into separate HTML files during rendering (one for each table).</li>
+<li>Convert HTML to DOCX:
+<ul>
+<li>Via Word COM through the <code>py32win</code> module (the option used).</li>
+<li>Via <a href="https://github.com/evidenceprime/html-docx-js">docx-html-js</a>.</li>
+<li>Via <code>soffice</code>: <code>soffice --headless --convert-to docx:"MS Word 2007 XML" --writer --outdir . Table\ 1.html</code>.</li>
+</ul></li>
+<li>Patch the rendered <code>word_document</code> and replace placeholder tables with actual tables.</li>
+</ol>
+<section id="steps-and-files" class="level2">
+<h2 class="anchored" data-anchor-id="steps-and-files">Steps and files</h2>
+<ol type="1">
+<li><code>rmarkdown::render("reg_tables_demo.Rmd")</code></li>
+<li><code>python html2docx.py tabs/</code> (requiring <code>py32win</code> and Microsoft Word on a Windows PC; tested with MS Office 2016 and Python 2.7).</li>
+<li><code>source("patch_docx_tables.R"); patchFlexTables("reg_tables_demo.docx", "tabs/", "reg_tables_demo_final.docx")</code></li>
+<li>Final <a href="https://github.com/cities-lab/rmd-docx/blob/master/reg_tables_demo_final.docx?raw=true">reg_tables_demo.docx</a>.</li>
+</ol>
+<p>All files and scripts used can be found on <a href="https://github.com/cities-lab/rmd-docx">GitHub</a>.</p>
+</section>
+</section>
+<section id="alternatives-things-to-keep-an-eye-on" class="level1">
+<h1>Alternatives / Things to keep an eye on</h1>
+<ol type="1">
+<li><p><code>broom</code> &gt; <code>huxtable</code> &gt; <code>flextable</code> &gt; <code>pandoc (2.0)</code>.</p>
+<p>This solution directly <code>knitr::knit</code>s R Markdown files into Word, embedding flextables through XML chunks. It eliminates the need to run scripts outside <code>knit</code> and is a more elegant solution than the hack above. At the time of writing, it was not yet acceptable for several reasons:</p>
+<ul>
+<li>Pandoc 2.0 had not yet been released, so users needed to build it from source.</li>
+<li>The <code>flextable</code> implementation proposed by <a href="https://gist.github.com/mnazarov/75c2c21048e8aca9bc5acb27e0234d85">Maxim Nazarov</a> had not yet been incorporated into <code>flextable</code>, though his code should work already.</li>
+<li><code>broom</code> supported fewer model objects than <a href="https://cran.r-project.org/web/packages/texreg/vignettes/texreg.pdf"><code>texreg</code></a>, although <code>broom</code> + <code>huxtable</code> seemed like a better long-term fit with the tidy philosophy and <code>broom</code>’s inclusion in the tidyverse.</li>
+</ul></li>
+<li><p><code>pandoc</code>, when it improves support for sophisticated tables.</p>
+<p>At the time, table support in Pandoc was rudimentary, in particular with no support for <a href="https://github.com/jgm/pandoc/issues/1024">table row/column spans</a>, which is what sent me down this rabbit hole. The issue had been open for four years, and it was unclear when it would be resolved.</p></li>
+</ol>
+</section>
+<section id="credits" class="level1">
+<h1>Credits</h1>
+<ul>
+<li><a href="https://github.com/davidgohel/ReporteRs/issues/68">Carsten Behring</a> for the idea and code for the Word patching hack.</li>
+<li><a href="http://gforge.se/2014/07/fast-track-publishing-using-rmarkdown/">Max Gordon</a>.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Reproducible Research</category>
+  <guid>https://lmwang.info/posts/creating-tables/</guid>
+  <pubDate>Sun, 22 Oct 2017 07:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

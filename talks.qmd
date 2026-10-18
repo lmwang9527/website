@@ -1,0 +1,18 @@
+---
+title: "Talks"
+description: "Presentations and guest lectures by Liming Wang."
+listing:
+  contents:
+    - posts/talk-acsp2017
+    - posts/talk-usp549f17
+  type: default
+  page-size: 20
+  sort: "date desc"
+  filter-ui: false
+  categories: false
+page-navigation: false
+title-block-banner: false
+---
+
+:::{#talks}
+:::

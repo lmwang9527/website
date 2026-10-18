@@ -1,0 +1,75 @@
+---
+title: "Liming Wang"
+description: "Associate Professor of Urban Studies and Planning at Portland State University."
+image: "files/profiles/liming-wang.jpg"
+page-navigation: false
+toc: false
+page-layout: full
+about:
+  id: hero-heading
+  template: trestles
+  image: files/profiles/liming-wang.jpg
+  image-width: 70%
+  links:
+    - icon: envelope
+      text: E-mail
+      href: mailto:lmwang+web@gmail.com
+    - icon: github
+      text: GitHub
+      href: https://github.com/lmwang9527
+      target: _blank
+    - icon: graduation-cap
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=jgcEZPgAAAAJ&hl=en
+      target: _blank
+    - icon: globe
+      text: Portland State University
+      href: https://www.pdx.edu/
+      target: _blank
+---
+
+:::{#hero-heading}
+
+## Biography
+
+Dr. Wang is an Associate Professor of Urban Studies and Planning and affiliated professor of Civil Engineering at Portland State University.
+
+Dr. Wang’s research takes a data-driven approach to address challenging issues in planning, in particular those intersecting land use and transportation. Relying on data analysis, simulation and visualization techniques, his research aims to inform policy makers and the public of the effects of infrastructure and policy choices on community outcomes such as accessibility, environment, and equity.
+
+## Education
+
+- **PhD, Urban Design and Planning**, University of Washington, Seattle (2009)
+- **MS, Landscape Ecology**, Chinese Academy of Forestry, Beijing, China (2002)
+- **BSc, Geography**, Peking University, Beijing, China (1999)
+
+## Research interests
+
+- Land Use Transportation Interaction Models
+- Urban Modeling and Simulation
+- Data Science
+
+:::
+
+## Featured publications {#papers}
+
+Selected recent and representative work is listed on the [publications page](publications.qmd).
+
+## Teaching {#teaching}
+
+Courses include transportation and land-use planning, travel-demand modeling, discrete choice, and data analysis. See the [teaching page](teaching.qmd) for course links and the complete teaching and software lists.
+
+## Software {#software}
+
+Projects include [VETravelDemandMM](https://github.com/cities-lab/VETravelDemandMM), [Transportation Cost Index](https://github.com/cities-lab/tci), [tidytable1](https://github.com/cities-lab/tidytable1), [lehdr](https://github.com/jamgreen/lehdr), and [UrbanSim](http://www.urbansim.com/).
+
+## Talks {#talks}
+
+Browse [presentations and guest lectures](talks.qmd).
+
+## Writing {#news}
+
+Read [posts](posts.qmd) and view the [presentations](talks.qmd).
+
+## Contact {#contact}
+
+[lmwang+web@gmail.com](mailto:lmwang+web@gmail.com) · Portland State University · [Schedule an appointment](https://calendly.com/lmwang).

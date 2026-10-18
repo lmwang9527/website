@@ -1,0 +1,13 @@
+---
+title: "Contact"
+description: "Contact information for Liming Wang at Portland State University."
+title-block-banner: false
+---
+
+**Email:** [lmwang+web@gmail.com](mailto:lmwang+web@gmail.com)
+
+**Address:** 506 SW Mill St, Portland, OR 97207, United States
+
+**Office hours:** Mondays, 16:00–17:00
+
+[Schedule an appointment](https://calendly.com/lmwang)

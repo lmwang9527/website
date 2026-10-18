@@ -1,0 +1,20 @@
+---
+title: "Writing"
+description: "Posts, articles, and notes by Liming Wang."
+listing:
+  sort: "date desc"
+  type: default
+  page-size: 50
+  categories: true
+  sort-ui: false
+  filter-ui: true
+  feed: true
+  contents:
+    - posts/creating-tables
+draft-mode: unlinked
+page-navigation: false
+title-block-banner: false
+---
+
+:::{#posts}
+:::

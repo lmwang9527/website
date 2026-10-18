@@ -1,0 +1,63 @@
+---
+title: "Creating Tables for Microsoft Word Output with R Markdown"
+description: "A reproducible workflow for rendering sophisticated regression tables from R Markdown to Microsoft Word."
+date: "2017-10-22"
+author: "Liming Wang"
+categories: [R, Reproducible Research]
+tags: [R Markdown, Word, table, regression]
+aliases:
+  - "/post/2017-10-22-creating-tables/index.html"
+  - "/blog/creating-tables/index.html"
+---
+
+# R Markdown
+
+I have switched to solely use R Markdown for the `communication` step of my [tidy work flow](http://r4ds.had.co.nz/introduction.html) and found it pleasant and actually prodocutive to use. However, there is one major hassle: output in Word format. In a perfect world, I would never need to use any Microsoft products ever again. In reality when I need to work with collaborators that do not use RMarkdown and funders of research projects that require reports in Word format (and a required style template), there are no other options. As a matter of fact, it seems that the only viable solution collaborating with anybody that doesn't use RMarkdown and/or `git` is still MS Word as of 2017/10.
+
+Rendering R Markdown file to `word_document` works for the most part, except for sophisticated tables, which, unfortunately, are prevalent in most of my work.
+
+# Possible Solutions
+
+There are a few possible solutions, none of them good enough for me at this point:
+
+1. `Gmisc::docx_document` (the output is a HTML file with an additional CSS file; no support for Word style template).
+2. Convert HTML output to Word document through `soffice` (tables in the output do not resemble the HTML input; some support for template).
+3. Pure R solution `officer` + `flextable` (they can generate good-looking Word output, but they do not work with R Markdown yet; see below).
+
+# My solution/hack (as of 2017/10)
+
+1. Render the R Markdown file with output set to `rmarkdown::word_document`.
+2. The R Markdown file uses `texreg`/`htmlreg` to generate HTML tables for regression results and saves them into separate HTML files during rendering (one for each table).
+3. Convert HTML to DOCX:
+   - Via Word COM through the `py32win` module (the option used).
+   - Via [docx-html-js](https://github.com/evidenceprime/html-docx-js).
+   - Via `soffice`: `soffice --headless --convert-to docx:"MS Word 2007 XML" --writer --outdir . Table\ 1.html`.
+4. Patch the rendered `word_document` and replace placeholder tables with actual tables.
+
+## Steps and files
+
+1. `rmarkdown::render("reg_tables_demo.Rmd")`
+2. `python html2docx.py tabs/` (requiring `py32win` and Microsoft Word on a Windows PC; tested with MS Office 2016 and Python 2.7).
+3. `source("patch_docx_tables.R"); patchFlexTables("reg_tables_demo.docx", "tabs/", "reg_tables_demo_final.docx")`
+4. Final [reg_tables_demo.docx](https://github.com/cities-lab/rmd-docx/blob/master/reg_tables_demo_final.docx?raw=true).
+
+All files and scripts used can be found on [GitHub](https://github.com/cities-lab/rmd-docx).
+
+# Alternatives / Things to keep an eye on
+
+1. `broom` > `huxtable` > `flextable` > `pandoc (2.0)`.
+
+   This solution directly `knitr::knit`s R Markdown files into Word, embedding flextables through XML chunks. It eliminates the need to run scripts outside `knit` and is a more elegant solution than the hack above. At the time of writing, it was not yet acceptable for several reasons:
+
+   - Pandoc 2.0 had not yet been released, so users needed to build it from source.
+   - The `flextable` implementation proposed by [Maxim Nazarov](https://gist.github.com/mnazarov/75c2c21048e8aca9bc5acb27e0234d85) had not yet been incorporated into `flextable`, though his code should work already.
+   - `broom` supported fewer model objects than [`texreg`](https://cran.r-project.org/web/packages/texreg/vignettes/texreg.pdf), although `broom` + `huxtable` seemed like a better long-term fit with the tidy philosophy and `broom`'s inclusion in the tidyverse.
+
+2. `pandoc`, when it improves support for sophisticated tables.
+
+   At the time, table support in Pandoc was rudimentary, in particular with no support for [table row/column spans](https://github.com/jgm/pandoc/issues/1024), which is what sent me down this rabbit hole. The issue had been open for four years, and it was unclear when it would be resolved.
+
+# Credits
+
+- [Carsten Behring](https://github.com/davidgohel/ReporteRs/issues/68) for the idea and code for the Word patching hack.
+- [Max Gordon](http://gforge.se/2014/07/fast-track-publishing-using-rmarkdown/).

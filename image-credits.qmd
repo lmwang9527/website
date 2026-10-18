@@ -1,0 +1,16 @@
+---
+title: "Image credits"
+description: "Creators, sources, licenses, and adaptations for featured research and presentation images."
+aliases:
+  - "/image-credits/index.html"
+---
+
+These featured images are illustrative visuals, not source data or documentary images of the specific research or events. Images are cropped and resized for display; captions on the related pages provide creator, source, license, and adaptation notes.
+
+| Page | Image and creator | Source | License or status | Adaptation |
+| --- | --- | --- | --- | --- |
+| [Statistical Models vs Machine Learning: A Reflection with Two Case Studies](posts/talk-acsp2017/index.qmd) | *Scatter plot*, UCRL / Lawrence Livermore National Laboratory; rendered with VisIt | [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Scatter_plot.jpg) · [original JPEG](https://upload.wikimedia.org/wikipedia/commons/c/c4/Scatter_plot.jpg) | Public domain in the United States; [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/) | Cropped and resized for display |
+| [Land Use Models for Regional Planning and Growth Management](posts/talk-usp549f17/index.qmd) | *Portland OR aerial*, Dicklyon | [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Portland_OR_aerial.jpg) · [original JPEG](https://upload.wikimedia.org/wikipedia/commons/3/3d/Portland_OR_aerial.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped and resized for display |
+| [De-Transformation Bias in Non-linear Trip Generation Models](publications.qmd#de-transformation-bias-in-non-linear-trip-generation-models) | *High Five Interchange*, dherrera_96; crop/visibility changes by Beyond My Ken | [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:High_Five_Interchange.jpg) · [original JPEG](https://upload.wikimedia.org/wikipedia/commons/3/39/High_Five_Interchange.jpg) · [original Flickr source](https://www.flickr.com/photos/56181704@N00/471801087) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | Commons derivative crop/visibility adjustments; cropped and resized for display |
+| [Housing location choices of the poor: does access to jobs matter?](publications.qmd#housing-location-choices-of-the-poor-does-access-to-jobs-matter) | *CTA MM Kimball brown*, Daniel Schwen | [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:CTA_MM_Kimball_brown.jpg) · [original JPEG](https://upload.wikimedia.org/wikipedia/commons/0/03/CTA_MM_Kimball_brown.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Cropped and resized for display |
+| [Measuring the State of Open Science in Transportation Using Large Language Models](publications.qmd#measuring-the-state-of-open-science-in-transportation-using-large-language-models) | *CERN Server 03*, Florian Hirzinger (www.fh-ap.com) | [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:CERN_Server_03.jpg) · [original JPEG](https://upload.wikimedia.org/wikipedia/commons/d/d7/CERN_Server_03.jpg) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | Cropped and resized for display |

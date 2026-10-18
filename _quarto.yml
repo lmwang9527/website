@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+    - "!posts/creating-word-doc/"
+
+website:
+  title: "Liming Wang"
+  site-url: "https://lmwang.info"
+  description: "Liming Wang — urban studies, transportation, and data science at Portland State University."
+  image: "files/profiles/liming-wang.jpg"
+  navbar:
+    background: light
+    left:
+      - text: About
+        href: index.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: Teaching
+        href: teaching.qmd
+      - text: Talks
+        href: talks.qmd
+      - text: Writing
+        href: posts.qmd
+      - text: Contact
+        href: contact.qmd
+      - text: Image credits
+        href: image-credits.qmd
+    right:
+      - icon: github
+        href: https://github.com/lmwang9527
+        target: _blank
+      - icon: rss
+        href: posts.xml
+        target: _blank
+  page-navigation: true
+  page-footer:
+    left: "[Liming Wang](https://lmwang.info) © <script>document.write(new Date().getFullYear())</script>"
+    center: "Built with [Quarto](https://quarto.org) and the [Quarto Academic Website Template](https://github.com/drganghe/quarto-academic-website-template)."
+    right:
+      - icon: github
+        href: https://github.com/lmwang9527
+        target: _blank
+      - icon: rss
+        href: posts.xml
+        target: _blank
+  search:
+    location: navbar
+    type: textbox
+  reader-mode: true
+  draft-mode: unlinked
+  open-graph: true
+  twitter-card: true
+
+format:
+  html:
+    theme: cosmo
+    css:
+      - styles.css
+      - pub-listing.css
+    toc: true
+    footnotes-hover: true
+    code-copy: true
+    code-link: true
+    code-overflow: wrap
+    fig-align: center
+    link-external-icon: false
+    link-external-newwindow: true
+    email-obfuscation: javascript
+
+execute:
+  freeze: auto

@@ -1,5 +1,0 @@
-# Local checkout artifacts; the site is generated into a clean public directory.
-public
-themes
-.Rhistory
-.Rproj.user

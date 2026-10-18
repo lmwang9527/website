@@ -1,0 +1,23 @@
+---
+title: "Teaching"
+description: "Courses taught by Liming Wang at Portland State University."
+title-block-banner: false
+---
+
+Courses taught at Portland State University include:
+
+- [Introduction to Data Science](https://cities.github.io/datascience2017)
+- [USP 414/514: Transportation Seminar](http://trec.pdx.edu/events)
+- USP 570: Transportation and Land Use
+- USP 587: Travel Demand Modeling
+- USP 657: Discrete Choice Modeling
+- [USP 634: Data Analysis I](https://usp634.github.io)
+- [USP 654: Data Analysis II](https://usp654.github.io)
+
+## Software
+
+- [VETravelDemandMM](https://github.com/cities-lab/VETravelDemandMM)
+- [Transportation Cost Index](https://github.com/cities-lab/tci)
+- [tidytable1](https://github.com/cities-lab/tidytable1)
+- [lehdr](https://github.com/jamgreen/lehdr)
+- [UrbanSim](http://www.urbansim.com/)

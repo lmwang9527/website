@@ -1,0 +1,28 @@
+---
+title: "Land Use Models for Regional Planning and Growth Management"
+description: "Guest lecture for USP 549, October 18, 2017."
+date: "2017-10-18T15:00:00-07:00"
+author: "Liming Wang"
+categories: [presentation, event]
+image: "/files/images/portland-aerial.jpg"
+aliases:
+  - "/talk/usp549f17/index.html"
+  - "/events/usp549f17/index.html"
+event-name: "Guest lecture for USP 549"
+location: "Portland, OR"
+slides: "https://hotdeck.github.io/usp549f17"
+---
+
+![Aerial view of downtown Portland, Oregon, with the Willamette River and bridges.](../../files/images/portland-aerial.jpg){fig-alt="Aerial view of downtown Portland, Oregon, with the Willamette River and bridges"}
+
+*Image credit:* Dicklyon, [Portland OR aerial](https://commons.wikimedia.org/wiki/File:Portland_OR_aerial.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); cropped and resized.
+
+**Event:** Guest lecture for USP 549 · **When:** October 18, 2017, 3:00 p.m. · **Where:** Portland, Oregon
+
+**Abstract.** This guest lecture contrasts community-oriented regional visioning with predictive land-use models, explains how land-use models support growth-management and transportation planning, and reviews the evolution and practical application of these models. It uses examples from the Puget Sound Regional Council and Metro in the Portland region to show how model forecasts connect policy scenarios, land-use change, and transportation-system analysis.
+
+## Slides
+
+[Open the slides](https://hotdeck.github.io/usp549f17/) in a new tab.
+
+<iframe src="https://hotdeck.github.io/usp549f17/" title="Land Use Models for Regional Planning and Growth Management slides" width="100%" height="560" loading="lazy" allowfullscreen></iframe>
