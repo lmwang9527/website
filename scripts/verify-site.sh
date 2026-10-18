@@ -4,12 +4,13 @@ set -euo pipefail
 root="$PWD"
 site="$root/docs"
 
-if rg --files -g '*.Rmarkdown' -g '*.rmarkdown' | rg -q .; then
+mapfile -t rmarkdown_files < <(git -C "$root" ls-files -- '*.Rmarkdown' '*.rmarkdown')
+if ((${#rmarkdown_files[@]})); then
   echo "R Markdown source remains; migrated article sources must be QMD" >&2
   exit 1
 fi
 
-mapfile -t markdown_files < <(rg --files -g '*.md')
+mapfile -t markdown_files < <(git -C "$root" ls-files -- '*.md')
 for path in "${markdown_files[@]}"; do
   case "$path" in
     README.md|MIGRATION.md|LICENSE.md) ;;
@@ -104,11 +105,11 @@ if rg -ni "Dr\. Gang He|Albert Einstein|Boris Podolsky|Your Name|email@gmail\.co
   exit 1
 fi
 
-if test -e "$root/hugoblox.yaml" || test -e "$root/config/_default/hugo.yaml" \
-  || test -e "$root/_vendor" || test -e "$root/layouts" || test -e "$root/content" \
-  || test -e "$root/themes" || test -e "$root/static"; then
-  echo "Legacy Hugo content/configuration remains in the source tree" >&2
-  exit 1
-fi
+for path in hugoblox.yaml config/_default/hugo.yaml _vendor layouts content themes static; do
+  if git -C "$root" ls-files -- "$path" | rg -q .; then
+    echo "Tracked legacy Hugo content/configuration remains: $path" >&2
+    exit 1
+  fi
+done
 
 echo "Quarto site verification passed (${#required_routes[@]} public routes, draft excluded, profile assets and migrated content present)."
