@@ -4,6 +4,19 @@ set -euo pipefail
 root="$PWD"
 site="$root/docs"
 
+if rg --files -g '*.Rmarkdown' -g '*.rmarkdown' | rg -q .; then
+  echo "R Markdown source remains; migrated article sources must be QMD" >&2
+  exit 1
+fi
+
+mapfile -t markdown_files < <(rg --files -g '*.md')
+for path in "${markdown_files[@]}"; do
+  case "$path" in
+    README.md|MIGRATION.md|LICENSE.md) ;;
+    *) echo "Unexpected Markdown content source: $path" >&2; exit 1 ;;
+  esac
+done
+
 required_routes=(
   index.html publications.html teaching.html talks.html posts.html posts.xml contact.html image-credits.html
   posts/creating-tables/index.html
@@ -57,7 +70,8 @@ if rg -ni "Dr\. Gang He|Albert Einstein|Boris Podolsky|Your Name|email@gmail\.co
 fi
 
 if test -e "$root/hugoblox.yaml" || test -e "$root/config/_default/hugo.yaml" \
-  || test -e "$root/_vendor" || test -e "$root/layouts" || test -e "$root/content"; then
+  || test -e "$root/_vendor" || test -e "$root/layouts" || test -e "$root/content" \
+  || test -e "$root/themes" || test -e "$root/static"; then
   echo "Legacy Hugo content/configuration remains in the source tree" >&2
   exit 1
 fi
