@@ -93,6 +93,12 @@ for url in \
   rg -Fq "$url" "$site/software.html" || { echo "Software page is missing link: $url" >&2; exit 1; }
 done
 
+if rg -Fq '**Liming Wang**' "$root/publications.qmd" \
+  || rg -q '<(strong|b)>[^<]*Liming Wang[^<]*</(strong|b)>' "$site/publications.html"; then
+  echo "Liming Wang is emphasized in the publications author list" >&2
+  exit 1
+fi
+
 if rg -ni "Dr\. Gang He|Albert Einstein|Boris Podolsky|Your Name|email@gmail\.com|placeholder[1-4]|Quarto Academic, PhD" "$site"; then
   echo "Demo identity or placeholder content remains in rendered output" >&2
   exit 1

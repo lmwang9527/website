@@ -19,7 +19,7 @@ aliases:
 
 ## Measuring the State of Open Science in Transportation Using Large Language Models
 
-Junyi Ji, Ruth Lu, Linda Belkessa, **Liming Wang**, Silvia Varotto, Yongqi Dong, Nicolas Saunier, Mostafa Ameli, Gregory S. Macfarlane, Bahman Madadi, and Cathy Wu. *Transportation Research Part C: Emerging Technologies* (forthcoming, 2026).
+Junyi Ji, Ruth Lu, Linda Belkessa, Liming Wang, Silvia Varotto, Yongqi Dong, Nicolas Saunier, Mostafa Ameli, Gregory S. Macfarlane, Bahman Madadi, and Cathy Wu. *Transportation Research Part C: Emerging Technologies* (forthcoming, 2026).
 
 [arXiv:2601.14429](https://arxiv.org/abs/2601.14429) · [PDF](https://arxiv.org/pdf/2601.14429)
 
