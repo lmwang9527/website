@@ -2,35 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lmwang.info/teaching.html</loc>
-    <lastmod>2026-10-18T00:11:25.804Z</lastmod>
+    <lastmod>2026-10-18T02:47:06.609Z</lastmod>
   </url>
   <url>
-    <loc>https://lmwang.info/publications.html</loc>
-    <lastmod>2026-10-18T02:42:09.762Z</lastmod>
+    <loc>https://lmwang.info/software.html</loc>
+    <lastmod>2026-10-18T02:47:08.598Z</lastmod>
   </url>
   <url>
-    <loc>https://lmwang.info/posts/talk-acsp2017/index.html</loc>
-    <lastmod>2026-10-18T02:42:09.762Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmwang.info/posts.html</loc>
-    <lastmod>2026-10-18T00:16:37.526Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmwang.info/contact.html</loc>
-    <lastmod>2026-10-18T00:11:28.222Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lmwang.info/index.html</loc>
-    <lastmod>2026-10-18T02:35:21.163Z</lastmod>
+    <loc>https://lmwang.info/posts/talk-usp549f17/index.html</loc>
+    <lastmod>2026-10-18T02:42:09.763Z</lastmod>
   </url>
   <url>
     <loc>https://lmwang.info/posts/creating-tables/index.html</loc>
     <lastmod>2026-10-18T00:13:55.350Z</lastmod>
   </url>
   <url>
-    <loc>https://lmwang.info/posts/talk-usp549f17/index.html</loc>
-    <lastmod>2026-10-18T02:42:09.763Z</lastmod>
+    <loc>https://lmwang.info/index.html</loc>
+    <lastmod>2026-10-18T02:35:21.163Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmwang.info/contact.html</loc>
+    <lastmod>2026-10-18T00:11:28.222Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmwang.info/posts.html</loc>
+    <lastmod>2026-10-18T00:16:37.526Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmwang.info/posts/talk-acsp2017/index.html</loc>
+    <lastmod>2026-10-18T02:42:09.762Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lmwang.info/publications.html</loc>
+    <lastmod>2026-10-18T02:42:09.762Z</lastmod>
   </url>
   <url>
     <loc>https://lmwang.info/talks.html</loc>

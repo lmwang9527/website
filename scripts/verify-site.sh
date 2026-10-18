@@ -18,7 +18,7 @@ for path in "${markdown_files[@]}"; do
 done
 
 required_routes=(
-  index.html publications.html teaching.html talks.html posts.html posts.xml contact.html
+  index.html publications.html teaching.html software.html talks.html posts.html posts.xml contact.html
   posts/creating-tables/index.html
   posts/talk-acsp2017/index.html
   posts/talk-usp549f17/index.html
@@ -66,10 +66,31 @@ for phrase in \
   "Housing location choices of the poor" \
   "Statistical Models vs Machine Learning" \
   "Land Use Models for Regional Planning and Growth Management" \
-  "VETravelDemandMM" \
   "506 SW Mill St" \
   "Creating Tables for Microsoft Word Output with R Markdown"; do
   rg -Fq "$phrase" "$site" || { echo "Rendered content check failed: $phrase" >&2; exit 1; }
+done
+
+for phrase in \
+  "VETravelDemandMM" \
+  "Transportation Cost Index" \
+  "tidytable1" \
+  "lehdr" \
+  "UrbanSim"; do
+  rg -Fq "$phrase" "$site/software.html" || { echo "Software page is missing project: $phrase" >&2; exit 1; }
+  if rg -Fq "$phrase" "$site/teaching.html"; then
+    echo "Software project remains on the teaching page: $phrase" >&2
+    exit 1
+  fi
+done
+
+for url in \
+  "https://github.com/cities-lab/VETravelDemandMM" \
+  "https://github.com/cities-lab/tci" \
+  "https://github.com/cities-lab/tidytable1" \
+  "https://github.com/jamgreen/lehdr" \
+  "http://www.urbansim.com/"; do
+  rg -Fq "$url" "$site/software.html" || { echo "Software page is missing link: $url" >&2; exit 1; }
 done
 
 if rg -ni "Dr\. Gang He|Albert Einstein|Boris Podolsky|Your Name|email@gmail\.com|placeholder[1-4]|Quarto Academic, PhD" "$site"; then

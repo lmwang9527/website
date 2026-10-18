@@ -21,6 +21,8 @@ website:
         href: publications.qmd
       - text: Teaching
         href: teaching.qmd
+      - text: Software
+        href: software.qmd
       - text: Talks
         href: talks.qmd
       - text: Writing
