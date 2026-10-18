@@ -20,7 +20,7 @@ test ! -e "$site/posts/creating-word-doc/index.html" || {
   exit 1
 }
 
-for image in files/profiles/liming-wang.jpg files/images/high-five-interchange.jpg \
+for image in files/favicon.png files/profiles/liming-wang.jpg files/images/high-five-interchange.jpg \
   files/images/chicago-brown-line.jpg files/images/cern-server.jpg \
   files/images/acsp-scatter-plot.jpg files/images/portland-aerial.jpg; do
   test -s "$site/$image" || { echo "Missing copied image: $image" >&2; exit 1; }
