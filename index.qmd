@@ -50,26 +50,6 @@ Dr. Wang’s research takes a data-driven approach to address challenging issues
 
 :::
 
-## Featured publications {#papers}
-
-Selected recent and representative work is listed on the [publications page](publications.qmd).
-
-## Teaching {#teaching}
-
-Courses include transportation and land-use planning, travel-demand modeling, discrete choice, and data analysis. See the [teaching page](teaching.qmd) for course links and the complete teaching and software lists.
-
-## Software {#software}
-
-Projects include [VETravelDemandMM](https://github.com/cities-lab/VETravelDemandMM), [Transportation Cost Index](https://github.com/cities-lab/tci), [tidytable1](https://github.com/cities-lab/tidytable1), [lehdr](https://github.com/jamgreen/lehdr), and [UrbanSim](http://www.urbansim.com/).
-
-## Talks {#talks}
-
-Browse [presentations and guest lectures](talks.qmd).
-
-## Writing {#news}
-
-Read [posts](posts.qmd) and view the [presentations](talks.qmd).
-
 ## Contact {#contact}
 
 [lmwang+web@gmail.com](mailto:lmwang+web@gmail.com) · Portland State University · [Schedule an appointment](https://calendly.com/lmwang).
